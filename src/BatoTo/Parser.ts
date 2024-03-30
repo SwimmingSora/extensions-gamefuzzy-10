@@ -115,7 +115,6 @@ export class Parser {
     }
 
     parseChapterDetails($: any): string[] {
-        const pages: string[] = []
 
         // Get all of the pages
         const scripts = $('script').toArray()
