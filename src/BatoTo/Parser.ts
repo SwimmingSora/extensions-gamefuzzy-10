@@ -115,6 +115,7 @@ export class Parser {
     }
 
     parseChapterDetails($: any): string[] {
+        let pages;
         // Get all of the pages
         const scripts = $('script').toArray()
         for (const scriptObj of scripts) {
@@ -132,7 +133,7 @@ export class Parser {
                 const decryptScript = CryptoJS.AES.decrypt(encryptedToken, batoJS).toString(CryptoJS.enc.Utf8)
                 const tknArray = decryptScript.toString().replace(/"/g, '').replace(/[[\]']+/g,'', '').split(',')
                 if (imgArray != null) { 
-                    const pages = imgArray.map((value: string, index: number) => `${value}?${tknArray[index]}`)                      
+                    pages = imgArray.map((value: string, index: number) => `${value}?${tknArray[index]}`)                      
                 }
             }
         }
