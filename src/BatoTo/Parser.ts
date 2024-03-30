@@ -137,7 +137,7 @@ export class Parser {
                 }
             }
         }
-        return pages
+        return pages ||[];
     }
 
     filterUpdatedManga($: any, time: Date, ids: string[], source: any): { updates: string[], loadNextPage: boolean } {
