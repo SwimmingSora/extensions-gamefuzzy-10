@@ -27459,7 +27459,7 @@ class Parser {
                 const decryptScript = CryptoJS.AES.decrypt(encryptedToken, batoJS).toString(CryptoJS.enc.Utf8);
                 const tknArray = decryptScript.toString().replace(/"/g, '').replace(/[[\]']+/g, '', '').split(',');
                 if (imgArray != null) {
-                    const pages = imgArray.map((value, index) => `${value}?${tknList[index]}`);
+                    const pages = imgArray.map((value, index) => `${value}?${tknArray[index]}`);
                 }
             }
         }
