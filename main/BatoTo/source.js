@@ -27454,7 +27454,7 @@ class Parser {
                   tknArr[n] = acc=Bg31t3HEbG1iSOK0lW_9XQ&exp=1654079974
                 */
                 const batoJS = eval((_b = script.split('const batoPass = ', 2)[1].split(';', 2)[0]) !== null && _b !== void 0 ? _b : '').toString();
-                const imgArray = JSON.parse((_c = script.split('const imgHttp = ', 2)[1].split(';', 2)[0]) !== null && _c !== void 0 ? _c : '');
+                const imgArray = JSON.parse((_c = script.split('const imgHttps = ', 2)[1].split(';', 2)[0]) !== null && _c !== void 0 ? _c : '');
                 const encryptedToken = ((_d = script.split('const batoWord = ', 2)[1].split(';', 2)[0]) !== null && _d !== void 0 ? _d : '').replace(/"/g, '');
                 const decryptScript = CryptoJS.AES.decrypt(encryptedToken, batoJS).toString(CryptoJS.enc.Utf8);
                 const tknArray = decryptScript.toString().replace(/"/g, '').replace(/[[\]']+/g, '', '').split(',');
