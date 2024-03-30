@@ -133,11 +133,8 @@ export class Parser {
                 const encryptedToken = (script.split('const batoWord = ', 2)[1].split(';', 2)[0] ?? '').replace(/"/g, '')
                 const decryptScript = CryptoJS.AES.decrypt(encryptedToken, batoJS).toString(CryptoJS.enc.Utf8)
                 const tknArray = decryptScript.toString().replace(/"/g, '').replace(/[[\]']+/g,'', '').split(',')
-                if (imgArray != null) {
-                    for (let i = 0; i < imgArray.length; i++) {
-                        if (i >= tknArray.length) break
-                        pages.push(`${imgArray[i]}?${tknArray[i]}`)
-                    }
+                if (imgArray != null) { 
+                    const pages = imgArray.map((value: string, index: number) => `${value}?${tknList[index]}`)                      
                 }
             }
         }
