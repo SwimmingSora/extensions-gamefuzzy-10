@@ -27441,6 +27441,7 @@ class Parser {
     }
     parseChapterDetails($) {
         var _a, _b, _c, _d;
+        let pages;
         // Get all of the pages
         const scripts = $('script').toArray();
         for (const scriptObj of scripts) {
@@ -27459,11 +27460,11 @@ class Parser {
                 const decryptScript = CryptoJS.AES.decrypt(encryptedToken, batoJS).toString(CryptoJS.enc.Utf8);
                 const tknArray = decryptScript.toString().replace(/"/g, '').replace(/[[\]']+/g, '', '').split(',');
                 if (imgArray != null) {
-                    const pages = imgArray.map((value, index) => `${value}?${tknArray[index]}`);
+                    pages = imgArray.map((value, index) => `${value}?${tknArray[index]}`);
                 }
             }
         }
-        return pages;
+        return pages || [];
     }
     filterUpdatedManga($, time, ids, source) {
         var _a, _b;
