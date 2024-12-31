@@ -15,7 +15,7 @@ import {
 
 import { Parser } from './Parser'
 
-const BATOTO_DOMAIN = 'https://bato.to'
+const BATOTO_DOMAIN = 'https://batocomic.org'
 
 export const BatoToInfo: SourceInfo = {
     version: '2.0.3',
